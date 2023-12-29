@@ -1,0 +1,167 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #65586C;
+    
+  }
+ 
+  .cart-icon {
+    position: relative;
+  }
+ 
+  .cart-icon img {
+    width: 30px;
+  }
+ 
+  .cart-count {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: red;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 50%;
+  }
+ 
+  .product-list-left {
+    text-align: left;
+    background: color #a1c0a1;
+    padding: 50px;
+  }
+ 
+  .product {
+    display: flex;  /* Adiciona flexbox para alinhar imagem e detalhes lado a lado */
+    margin-bottom: 50px;
+    background-color: #a1c0a1;
+    padding: 50px;
+    border-radius: 8px;
+    width: 500px;
+}
+ 
+  .product img {
+    max-width: 100%;
+    height: auto;
+    margin-right: 20px;  /* Adiciona espaço entre a imagem e os detalhes */
+    margin-left: 100px;
+  }
+ 
+  .product-details {
+    flex-grow: 1;  /* Faz com que os detalhes ocupem todo o espaço disponível */
+  }
+ 
+  .product-details h2 {
+    margin-top: 0;  /* Remove a margem superior padrão do h2 */
+  }
+ 
+  .add-to-cart {
+    background-color: #A1C0A1;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+ 
+  .add-to-cart:hover {
+    background-color: #A1C0A1;
+  }
+ 
+  label, select, input {
+    display: block;
+    margin-bottom: 10px;
+  }
+ 
+  footer {
+    background-color: #A1C0A1;
+    padding: 20px;
+  }
+ 
+  .cart-summary {
+    text-align: center;
+  }
+ 
+  .cart-items {
+    list-style: none;
+    padding: 0;
+  }
+ 
+  .cart-items li {
+    margin-bottom: 10px;
+  }
+ 
+  .total {
+    font-weight: bold;
+  }
+ 
+  .checkout {
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+ 
+  .checkout:hover, .continue-shopping:hover {
+    background-color: #2980b9;
+  }
+
+  
+  
+  header{
+    display: flex;
+    flex-direction: column;
+}
+  
+  
+  .menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    height: 85px;
+    position: relative;
+}
+
+.left-side-menu{
+    display: flex;
+    gap: 50px;
+}
+
+
+.logo img{
+    width: 50%;
+    height: auto;
+}
+
+.search-bar{
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+}
+
+.right-side-menu{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100px;
+    height: 100px;
+}
+
+.search-bar input{
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 800px;
+    background-image: url('imagem/icons8-lupa-24.png');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px; 
+}
+
+.line{
+    height: 1px;
+    background-color: #ddd;
+    align-self: center;
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Carrinho.css">
+  <title>Carrinho de Compras</title>
+</head>
+<body>
+
+    <header>
+        <div class="menu">
+            <div class="left-side-menu">
+                <div class="logo">
+                    <img src="imagem/logo.png" alt="">
+                </div>
+            </div>
+
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+            </div>
+
+            <p>
+                Faça login ou cadastre-se
+            </p>
+
+            <div class="right-side-menu">
+                <a href="Cadastro.html" class="conta"><img src="imagem/icons8-conta-24.png" alt=""></a>
+                <a href="Carrinho.html"><img src="imagem/icons8-carrinho-32.png" alt=""></a>
+            </div>
+
+        </div>
+        <div class="line"></div>
+    </header>
+
+  <main class="product-list-left">
+    <section class="product">
+      <img src="product1.jpg" alt="Produto 1">
+      <div class="product-details">
+        <h2>Camiseta Legal</h2>
+        <p class="price">$19.99</p>
+        <label for="quantity1">Quantidade:</label>
+        <input type="number" id="quantity1" name="quantity1" value="1" min="1">
+        <label for="color1">Cor:</label>
+        <select id="color1" name="color1">
+          <option value="red">Vermelho</option>
+          <option value="blue">Azul</option>
+          <option value="green">Verde</option>
+        </select>
+        <label for="size1">Tamanho:</label>
+        <select id="size1" name="size1">
+          <option value="s">Pequeno</option>
+          <option value="m">Médio</option>
+          <option value="l">Grande</option>
+        </select>
+        
+        
+      </div>
+    </section>
+
+    <section class="product">
+      <img src="product2.jpg" alt="Produto 2">
+      <div class="product-details">
+        <h2>Calça Confortável</h2>
+        <p class="price">$29.99</p>
+        <label for="quantity2">Quantidade:</label>
+        <input type="number" id="quantity2" name="quantity2" value="1" min="1">
+        <label for="color2">Cor:</label>
+        <select id="color2" name="color2">
+          <option value="black">Preto</option>
+          <option value="brown">Marrom</option>
+          <option value="gray">Cinza</option>
+        </select>
+        <label for="size2">Tamanho:</label>
+        <select id="size2" name="size2">
+          <option value="s">Pequeno</option>
+          <option value="m">Médio</option>
+          <option value="l">Grande</option>
+        </select>
+        
+    
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="cart-summary">
+      <h2>Resumo do Carrinho</h2>
+      <ul class="cart-items">
+        <!-- Itens do carrinho serão adicionados dinamicamente aqui -->
+      </ul>
+      <p class="total">Total: $<span>0.00</span></p>
+      <button class="checkout">Finalizar Compra</button>
+      <button class="continue-shopping">Continuar Comprando</button>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
