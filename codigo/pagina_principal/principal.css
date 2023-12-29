@@ -267,3 +267,136 @@ img{
     color: #111;
     text-transform: capitalize;
 }
+
+
+
+@media only screen and (max-width: 480px) {
+    .menu {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .search-bar {
+        margin: 10px 0;
+    }
+
+    .right-side-menu {
+        margin-top: 10px;
+    }
+}
+
+
+@media screen and (max-width: 480px){
+    .menuFeminino{
+        max-width: 100%;
+        height: auto;
+        margin-top: 500%;
+
+    }
+    
+    .masculino{
+        max-width: 100%;
+        height: auto;
+        margin-top: 450%;
+    }
+    
+    
+}
+
+
+
+@media only screen and (max-width: 480px) {
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search-bar {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    p a {
+        display: block;
+        text-align: center;
+    }
+
+    .right-side-menu {
+        margin-top: 10px;
+    }
+    
+    .fotos{
+        margin-top: 10px;
+        width: 100%;
+        margin-top: 150px;
+
+    }
+}
+
+
+
+@media only screen and (max-width: 480px) {
+    .fotos div {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+
+@media only screen and (max-width: 480px) {
+    .carousel-container {
+        width: 100%;
+    }
+
+    .carousel-slide {
+        width: 100%;
+    }
+}
+
+
+
+.fotos {
+    
+    display: flex;
+    justify-content: space-between;
+}
+
+
+@media screen and (max-width: 767px) {
+    .fotos {
+        flex-direction: column;
+        align-items: center; 
+    }
+
+    .fotos > div {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+}
+
+
+
+@media screen and (max-width: 767px) {
+    .contact {
+        text-align: center; 
+    }
+
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info > div {
+        margin-bottom: 20px;
+    }
+
+    .social-icon {
+        margin-top: 10px;
+    }
+
+    .end-text {
+        text-align: center;
+        margin-top: 20px;
+    }
+}
