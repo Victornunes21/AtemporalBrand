@@ -1,0 +1,269 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Jost',sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    height: 85px;
+    position: relative;
+}
+
+.left-side-menu{
+    display: flex;
+    gap: 50px;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    margin-top: 80px;
+    margin-left: 150px;
+}
+
+nav ul li{
+    margin-right: 30px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: hsl(219, 9%, 45%);
+}
+
+.search-bar{
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+}
+
+.search-bar input{
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 800px;
+    background-image: url('imagem/icons8-lupa-24.png');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px; 
+}
+
+.right-side-menu{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100px;
+    height: 100px;
+}
+
+.line{
+    height: 1px;
+    background-color: #ddd;
+    align-self: center;
+}
+
+.logo img{
+    width: 50%;
+    height: auto;
+}
+
+.fotos{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.fotos div{
+    text-align: center;
+}
+
+.fotos img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.carrossel-container{
+    padding: 100px;
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.carrossel{
+    display: flex;
+    animation: scroll 10s linear infinite;
+}
+
+.carrossel-slide{
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+@keyframes scroll{
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(-200%);
+    }
+    75% {
+        transform: translateX(-300%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.feminino{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.menuFeminino{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.menuFeminino a{
+    margin: 15px;
+}
+
+.menuFeminino img{
+    width: 300px;
+    height: 300px;
+}
+
+.menuFeminino h4{
+    margin-top: 10px;
+}
+
+.masculino{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.menuMasculino{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 400px;
+}
+
+.menuMasculino a{
+    margin: 15px;
+}
+
+.menuMasculino img{
+    width: 300px;
+    height: 300px;
+}
+
+.menuMasculino h4{
+    margin-top: 15px;
+}
+
+.contact{
+    margin-top: 300px;
+    background-color: #f3f4f6;
+    display: flex;
+}
+
+.contact-info{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, auto));
+    gap: 3rem;
+    margin-top: 20px;
+}
+
+.first-info img{
+    width: 140px;
+    height: auto;
+}
+
+.contact-info h4{
+    color: #212529;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.contact-info p{
+    color: #565656;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all .42s;
+}
+
+.contact-info{
+    display: flex;
+}
+
+.first-info,
+.second-info,
+.third-info,
+.fourth-info,
+.five{
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.contact-info p:hover{
+    color: #EE1C47;
+}
+
+.social-icon i{
+    color: #565656;
+    margin-right: 10px;
+    font-size: 20px;
+    transition: all .42s;
+    margin-top: 15px;
+}
+
+.social-icon i:hover{
+    transform: scale(1.3);
+}
+
+.end-text{
+    background-color: #edfff1;
+    text-align: center;
+    padding: 20px;
+}
+
+.end-text p{
+    color: #111;
+    text-transform: capitalize;
+}
