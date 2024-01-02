@@ -15,25 +15,40 @@ app.config['MYSQL_DB'] = 'AtemporalBrand'
 mysql = MySQL()
 mysql.init_app(app)
 
-usuarios = {
-    'cliente1': 'cliente@gmail.com1'
-}
 
 @app.route('/')
 def inicial():
     return render_template('principal.html')
 
-@app.route('/cadastro')
+@app.route('/Cliente/<nome>')
+def cliente(nome):
+    cursor = mysql.connection.cursor()
+    cursor.execute("SELECT * FROM cliente WHERE nome = %s", (nome,))
+    data = cursor.fetchall()
+    cursor.close()
+    return str(data)
+
+@app.route('/cadastro.html')
 def cadastro():
     return render_template('cadastro.html')
 
 @app.route('/enviar', methods=['POST'])
 def enviar():
-    return render_template('cadastro.html')
-    c = request.form['usuario']
-    m = request.form['mens']
-    usuarios[c] = m
-    return render_template('resposta.html', usuario=usuarios)
+    if request.method == 'POST':
+        email = request.form['email']
+        senha = request.form['senha']
+        # Adicione outros campos conforme necessário
+
+        cursor = mysql.connection.cursor()
+        cursor.execute("INSERT INTO cliente (email, senha) VALUES (%s, %s)", (email, senha))
+        mysql.connection.commit()
+        cursor.close()
+
+        return "Cadastro realizado com sucesso!"
+
+@app.route('/carrinho.html')
+def carrinho():
+    return render_template('carrinho.html')
 
 @app.route('/Produto')
 def produtos():
@@ -43,13 +58,6 @@ def produtos():
     cursor.close()
     return str(data)
 
-@app.route('/Cliente/<nome>')
-def cliente(nome):
-    cursor = mysql.connection.cursor()
-    cursor.execute("SELECT * FROM cliente WHERE nome = %s", (nome,))
-    data = cursor.fetchall()
-    cursor.close()
-    return str(data)
 
 if __name__ == '__main__':
     app.run(debug=True)
