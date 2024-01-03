@@ -37,7 +37,6 @@ def enviar():
     if request.method == 'POST':
         email = request.form['email']
         senha = request.form['senha']
-        # Adicione outros campos conforme necessário
 
         cursor = mysql.connection.cursor()
         cursor.execute("INSERT INTO cliente (email, senha) VALUES (%s, %s)", (email, senha))
