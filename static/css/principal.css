@@ -362,7 +362,7 @@ img{
 }
 
 
-@media screen and (max-width: 767px) {
+/*@media screen and (max-width: 767px) {
     .fotos {
         flex-direction: column;
         align-items: center; 
@@ -372,8 +372,26 @@ img{
         margin-bottom: 20px;
         text-align: center;
     }
-}
+}*/
+@media screen and (max-width: 767px){
+    .fotos {
+        flex-direction: row;
+        display: inline block;
+        
+        
+    }
 
+    .fotos > div {
+        padding: 10px;
+        display: inline block;
+      }
+    .fotos img{
+        width: 40px;
+        height: 40px;
+      }
+ 
+    
+}
 
 
 @media screen and (max-width: 767px) {
@@ -400,3 +418,5 @@ img{
         margin-top: 20px;
     }
 }
+
+
