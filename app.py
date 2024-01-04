@@ -1,4 +1,5 @@
 from flask import Flask
+from PIL import Image
 from flask import render_template, redirect, session, jsonify
 from flask import request, abort
 from flask_mysqldb import MySQL
@@ -7,6 +8,37 @@ app = Flask(__name__)
 
 app.secret_key = 'loja AtemporalBrand'
 
+imagens = [
+    ('static/imagens/feminino1.jpg', 1),
+    ('static/imagens/feminino2.jpg', 2),
+    ('static/imagens/feminino3.jpg', 3),
+    ('static/imagens/feminino4.jpg', 4),
+    ('static/imagens/feminino5.jpg', 5),
+    ('static/imagens/feminino6.jpg', 6),
+    ('static/imagens/feminino7.jpg', 7),
+    ('static/imagens/feminino8.jpg', 8),
+    ('static/imagens/masculino1.jpg', 9),
+    ('static/imagens/masculino2.jpg', 10),
+    ('static/imagens/masculino3.jpg', 11),
+    ('static/imagens/masculino4.jpg', 12),
+    ('static/imagens/masculino5.jpg', 13),
+    ('static/imagens/masculino6.jpg', 14),
+    ('static/imagens/masculino7.jpg', 15),
+    ('static/imagens/masculino8.jpg', 16),
+]
+
+# Tamanho desejado para as imagens (largura x altura)
+novo_tamanho = (150, 150)  # Ajuste o tamanho conforme necessário
+
+for imagem_path, produto_id in imagens:
+    # Abre a imagem
+    imagem = Image.open(imagem_path)
+
+    # Redimensiona a imagem
+    imagem_redimensionada = imagem.resize(novo_tamanho)
+
+    # Sobrescreve a imagem original com a imagem redimensionada
+    imagem_redimensionada.save(imagem_path)
 
 # Configurações do banco de dados
 app.config['MYSQL_HOST'] = 'localhost'
@@ -75,6 +107,7 @@ def cadastrar():
 
         cursor = mysql.connection.cursor()
         cursor.execute("INSERT INTO cliente (nome, email, cpf, senha) VALUES (%s, %s, %s, %s)", (nome, email, cpf, senha))
+        user = cursor.fetchone()
         mysql.connection.commit()
         cursor.close()
 

@@ -19,22 +19,22 @@ INSERT INTO Produto(nome, quantProduto, valorProduto, tamanhoProduto, descricao)
     ("Blazer", "20", "299.90", "P, M, G", "Blazer masculino slim alfaiatado com ombreiras azul");
 
 INSERT INTO Imagem (url, produtoID) VALUES
-    ('imagens/feminino1.jpg', 1),
-    ('imagens/feminino2.jpg', 2),
-    ('imagens/feminino3.jpg', 3),
-    ('imagens/feminino4.jpg', 4),
-    ('imagens/feminino5.jpg', 5),
-    ('imagens/feminino6.jpg', 6),
-    ('imagens/feminino7.jpg', 7),
-    ('imagens/feminino8.jpg', 8),
-    ('imagens/masculino1.jpg', 9),
-    ('imagens/masculino2.jpg', 10),
-    ('imagens/masculino3.jpg', 11),
-    ('imagens/masculino4.jpg', 12),
-    ('imagens/masculino5.jpg', 13),
-    ('imagens/masculino6.jpg', 14),
-    ('imagens/masculino7.jpg', 15),
-    ('imagens/masculino8.jpg', 16);
+    ('static/imagens/feminino1.jpg', 1),
+    ('static/imagens/feminino2.jpg', 2),
+    ('static/imagens/feminino3.jpg', 3),
+    ('static/imagens/feminino4.jpg', 4),
+    ('static/imagens/feminino5.jpg', 5),
+    ('static/imagens/feminino6.jpg', 6),
+    ('static/imagens/feminino7.jpg', 7),
+    ('static/imagens/feminino8.jpg', 8),
+    ('static/imagens/masculino1.jpg', 9),
+    ('static/imagens/masculino2.jpg', 10),
+    ('static/imagens/masculino3.jpg', 11),
+    ('static/imagens/masculino4.jpg', 12),
+    ('static/imagens/masculino5.jpg', 13),
+    ('static/imagens/masculino6.jpg', 14),
+    ('static/imagens/masculino7.jpg', 15),
+    ('static/imagens/masculino8.jpg', 16);
 
 
 INSERT INTO CLIENTE(nome, email, cpf, senha) VALUES
