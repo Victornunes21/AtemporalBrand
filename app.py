@@ -1,5 +1,5 @@
 from flask import Flask
-from flask import render_template, redirect, session
+from flask import render_template, redirect, session, jsonify
 from flask import request, abort
 from flask_mysqldb import MySQL
 
@@ -22,6 +22,24 @@ mysql.init_app(app)
 @app.route('/')
 def inicial():
     return render_template('principal.html')
+
+'''@app.route('/pesquisar', methods=['GET'])
+def pesquisar():
+    # Obtém o termo de pesquisa da consulta GET
+    termo_pesquisa = request.args.get('q', '')
+
+    # Conecta-se ao banco de dados
+    cursor = mysql.connection.cursor()
+
+    # Realiza a consulta no banco de dados
+    cursor.execute("SELECT * FROM Produto WHERE nome LIKE %s", ('%' + termo_pesquisa + '%',))
+    resultados = cursor.fetchall()
+
+    # Fecha a conexão com o banco de dados
+    cursor.close()
+
+    # Retorna os resultados em formato JSON
+    return jsonify(resultados)'''
 
 @app.route('/Cliente/<nome>')
 def cliente(nome):
