@@ -1,0 +1,29 @@
+<!-- pesquisa.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa</title>
+</head>
+<body>
+    <h1>Resultados da Pesquisa</h1>
+
+    {% for produto in resultados %}
+        <h2>{{ produto[1] }}</h2>
+        <p>{{ produto[2] }}</p>
+        <p>Quantidade: {{ produto[3] }}</p>
+        <p>Valor: {{ produto[4] }}</p>
+        <p>Tamanhos: {{ produto[5] }}</p>
+
+        {% if produto[6] %}
+            <img src="{{ produto[6] }}" alt="{{ produto[1] }}">
+        {% else %}
+            <p>Nenhuma imagem disponível.</p>
+        {% endif %}
+
+        <hr>
+    {% endfor %}
+</body>
+</html>

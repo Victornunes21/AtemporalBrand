@@ -22,7 +22,7 @@
             <div class="search-bar">
                 <form id="search-form">
                     <input type="text" id="search-input" placeholder="Search">
-                    <!--<button type="submit">Search</button>-->
+                    <button type="submit">Search</button>
                 </form>
             </div>
             <p><a href="login.html">Faça login ou cadastre-se</a></p>
@@ -33,7 +33,7 @@
                 <!-- Se o usuário não estiver logado, exiba o link de login ou cadastro
             {% endif %}-->
             
-            <!--<script>
+            <script>
                 // Adicionado script para lidar com o envio do formulário de pesquisa
                 document.getElementById('search-form').addEventListener('submit', function (event) {
                     event.preventDefault();
@@ -42,11 +42,11 @@
                     // Redireciona para a página de resultados de pesquisa
                     window.location.href = '/pesquisar?q=' + searchTerm;
                 });
-            </script>-->
+            </script>
 
             <!--{% if 'clienteid' in session %}-->
                 <!-- Se o usuário estiver logado, exiba a mensagem de boas-vindas e o nome -->
-                <p>Bem-vindo, {{ user_info }}! <a href="login.html">Sair</a></p>
+                <!--<p>Bem-vindo, {{ user_info }}! <a href="login.html">Sair</a></p>-->
             <!--{% else %}-->
                 <!-- Se o usuário não estiver logado, exiba o link de login ou cadastro -->
                 <p><a href="login.html">Faça login ou cadastre-se</a></p>

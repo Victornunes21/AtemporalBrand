@@ -23,7 +23,9 @@ mysql.init_app(app)
 def inicial():
     return render_template('principal.html')
 
-'''@app.route('/pesquisar', methods=['GET'])
+# ...
+
+@app.route('/pesquisar', methods=['GET'])
 def pesquisar():
     # Obtém o termo de pesquisa da consulta GET
     termo_pesquisa = request.args.get('q', '')
@@ -31,15 +33,21 @@ def pesquisar():
     # Conecta-se ao banco de dados
     cursor = mysql.connection.cursor()
 
-    # Realiza a consulta no banco de dados
-    cursor.execute("SELECT * FROM Produto WHERE nome LIKE %s", ('%' + termo_pesquisa + '%',))
+    # Realiza a consulta no banco de dados para obter informações do produto e suas imagens
+    cursor.execute("""
+        SELECT Produto.produtoID, Produto.nome, Produto.descricao, Produto.quantProduto, Produto.valorProduto, Produto.tamanhoProduto, Imagem.url
+        FROM Produto
+        LEFT JOIN Imagem ON Produto.produtoID = Imagem.produtoID
+        WHERE Produto.nome LIKE %s
+    """, ('%' + termo_pesquisa + '%',))
+    
     resultados = cursor.fetchall()
 
     # Fecha a conexão com o banco de dados
     cursor.close()
 
-    # Retorna os resultados em formato JSON
-    return jsonify(resultados)'''
+    # Retorna os resultados para o template HTML
+    return render_template('pesquisa.html', resultados=resultados)
 
 @app.route('/Cliente/<nome>')
 def cliente(nome):
