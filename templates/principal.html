@@ -22,14 +22,13 @@
             <div class="search-bar">
                 <input type="text" placeholder="Search">
             </div>
-
-            {% if 'clienteid' in session %}
-                <!-- Se o usuário estiver logado, exiba a mensagem de boas-vindas e o nome -->
+            <p><a href="login.html">Faça login ou cadastre-se</a></p>
+            <!--{% if 'clienteid' in session %}-->
+                <!-- Se o usuário estiver logado, exiba a mensagem de boas-vindas e o nome
                 <p>Bem-vindo, {{ user_info }}! <a href="login.html">Sair</a></p>
-            {% else %}
-                <!-- Se o usuário não estiver logado, exiba o link de login ou cadastro -->
-                <p><a href="login.html">Faça login ou cadastre-se</a></p>
-            {% endif %}
+            {% else %}-->
+                <!-- Se o usuário não estiver logado, exiba o link de login ou cadastro
+            {% endif %}-->
 
             <div class="right-side-menu">
                 <a href="login.html" class="conta"><img src="static/imagens/icons8-conta-24.png" alt=""></a>

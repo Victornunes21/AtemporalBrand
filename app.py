@@ -39,7 +39,6 @@ def login():
 def cadastro():
     return render_template('cadastro.html')
 
-
 @app.route('/cadastrar', methods=['POST'])
 def cadastrar():
     if request.method == 'POST':
