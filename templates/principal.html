@@ -20,16 +20,30 @@
             </div>
 
             <div class="search-bar">
-                <input type="text" placeholder="Search">
+                <form id="search-form">
+                    <input type="text" id="search-input" placeholder="Search">
+                    <!--<button type="submit">Search</button>-->
+                </form>
             </div>
+            
+            <!--<script>
+                // Adicionado script para lidar com o envio do formulário de pesquisa
+                document.getElementById('search-form').addEventListener('submit', function (event) {
+                    event.preventDefault();
+                    const searchTerm = document.getElementById('search-input').value;
+            
+                    // Redireciona para a página de resultados de pesquisa
+                    window.location.href = '/pesquisar?q=' + searchTerm;
+                });
+            </script>-->
 
-            {% if 'clienteid' in session %}
+            <!--{% if 'clienteid' in session %}-->
                 <!-- Se o usuário estiver logado, exiba a mensagem de boas-vindas e o nome -->
                 <p>Bem-vindo, {{ user_info }}! <a href="login.html">Sair</a></p>
-            {% else %}
+            <!--{% else %}-->
                 <!-- Se o usuário não estiver logado, exiba o link de login ou cadastro -->
                 <p><a href="login.html">Faça login ou cadastre-se</a></p>
-            {% endif %}
+            <!--{% endif %}-->
 
             <div class="right-side-menu">
                 <a href="login.html" class="conta"><img src="static/imagens/icons8-conta-24.png" alt=""></a>
