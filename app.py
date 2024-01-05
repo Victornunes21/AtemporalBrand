@@ -94,6 +94,10 @@ def login():
 def cadastro():
     return render_template('cadastro.html')
 
+@app.route('/fornecedor.html')
+def fornecedor():
+    return render_template('fornecedor.html')
+
 @app.route('/cadastrar', methods=['POST'])
 def cadastrar():
     if request.method == 'POST':
@@ -106,6 +110,22 @@ def cadastrar():
         cursor.execute("INSERT INTO cliente (nome, email, cpf, senha) VALUES (%s, %s, %s, %s)", (nome, email, cpf, senha))
         user = cursor.fetchone()
         
+
+        mysql.connection.commit()
+        cursor.close()
+
+        return redirect
+    
+@app.route('/cadastrarforn', methods =['POST'])
+def cadastrarforn():
+    if request.method == 'POST':
+        nome = request.form['nome']
+        email = request.form['email']
+        senha = request.form['senha']
+
+        cursor = mysql.connection.cursor()
+        cursor.execute("INSERT INTO Fornecedor (nome, email,  senha) VALUES (%s, %s,  %s)", (nome, email, senha))
+        user = cursor.fetchone()
 
         mysql.connection.commit()
         cursor.close()
