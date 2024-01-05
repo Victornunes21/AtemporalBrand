@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="static/css/cadastro.css">
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    <title>Cadastro</title>
+    <title>Cadastro do Fornecedor</title>
 </head>
 <body>
     <div class="wrapper">
-        <form action="/cadastrar" method="post">
-            <h1>Cadastro</h1>
+        <form action="/cadastrarforn" method="POST">
+            <h1>Cadastro do Fornecedor</h1>
             <div class="input-box">
                 <input type="text" name="nome" placeholder="Nome" required>
                 <i class="bx bxs-user"></i>
@@ -19,20 +19,13 @@
             <div class="input-box">
                 <input type="text" name="email" placeholder="Email">
             </div>
-            <div class="input-box">
-                <input type="text" name="cpf" placeholder="CPF">
-            </div>
+
             <div class="input-box">
                 <input type="password" name="senha" placeholder="Senha" required>
                 <i class="bx bxs-lock-alt"></i>
             </div>
             <button type="submit" class="btn">Cadastrar-se</button>
-            <div class="register-link">
-                <p>Já tem uma conta? <a href="login.html">Entre aqui.</a></p>
-                <p>Deseja entrar como Fornecedor? <a href="fornecedor.html">Entre aqui</a></p>
-            </div>
         </form>
     </div>
-
 </body>
 </html>
