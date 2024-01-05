@@ -28,6 +28,9 @@ def inicial():
 def novidades():
     return render_template('novidades.html')
 
+@app.route('/cadastrar_prod.html')
+def cadastrar_prod():
+    return render_template('cadastrar_prod.html')
 
 carrinho_itens = []  # Lista para armazenar os itens no carrinho
 
@@ -182,6 +185,26 @@ def produtos():
     cursor.close()
     return str(data)
 
+@app.route('/cadastrar_produto', methods=['POST'])
+def cadastrar_produto():
+    if request.method == 'POST':
+        nome = request.form['nome']
+        descricao = request.form['descricao']
+        quantidade = request.form['quantidade']
+        valor = request.form['valor']
+
+        # Adapte esta lógica para inserir os dados no seu banco de dados
+        cursor = mysql.connection.cursor()
+        cursor.execute("""
+            INSERT INTO Produto (nome, descricao, quantProduto, valorProduto)
+            VALUES (%s, %s, %s, %s)
+        """, (nome, descricao, quantidade, valor))
+
+        mysql.connection.commit()
+        cursor.close()
+
+        # Redirecione para a página de sucesso ou qualquer outra página
+        return redirect('/cadastrar_prod')
 
 if __name__ == '__main__':
     app.run(debug=True)
