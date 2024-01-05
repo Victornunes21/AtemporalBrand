@@ -85,7 +85,10 @@ nav ul li a{
     align-items: center;
     justify-content: space-around;
     margin-top: 20px;
+  
 }
+
+
 
 .fotos div{
     text-align: center;
@@ -268,8 +271,6 @@ img{
     text-transform: capitalize;
 }
 
-
-
 @media only screen and (max-width: 480px) {
     .menu {
         flex-direction: column;
@@ -343,6 +344,8 @@ img{
 }
 
 
+
+
 @media only screen and (max-width: 480px) {
     .carousel-container {
         width: 100%;
@@ -355,21 +358,21 @@ img{
 
 
 
+
 .fotos {
-    
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
 }
 
 
 /*@media screen and (max-width: 767px) {
     .fotos {
         flex-direction: column;
-        align-items: center; 
+        align-items: center;
     }
 
     .fotos > div {
-        margin-bottom: 20px;
+        margin-bottom: 20px; 
         text-align: center;
     }
 }*/
@@ -395,10 +398,10 @@ img{
 
 
 @media screen and (max-width: 767px) {
-    .contact {
+    .contact{
         text-align: center; 
     }
-
+    
     .contact-info {
         display: flex;
         flex-direction: column;
@@ -418,5 +421,3 @@ img{
         margin-top: 20px;
     }
 }
-
-
