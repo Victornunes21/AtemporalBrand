@@ -1,52 +1,48 @@
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f8f9fa;
-    margin: 0;
-    padding: 20px;
-    text-align: center;
-}
-
-h1 {
-    color: #007bff;
-    margin-bottom: 30px;
-}
-
-#resultados {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-    justify-content: center;
-}
-
-.produto {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
 img {
+    width: 150px; /* ou qualquer valor desejado */
+    height: auto; /* Isso mantém a proporção da imagem */
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+    width: 300px; 
+    display: inline-block;
+    vertical-align: top;
+}
+
+.card h2 {
+    margin-bottom: 8px;
+}
+
+.card p {
+    margin-bottom: 5px;
+}
+
+.card img {
     width: 100%;
     height: auto;
-    border-radius: 10px 10px 0 0;
-}
-
-.produto-info {
-    padding: 20px;
-    text-align: left;
-}
-
-h2 {
-    color: #343a40;
+    border-radius: 4px;
     margin-bottom: 10px;
 }
 
-p {
-    color: #6c757d;
-    margin-bottom: 15px;
+.card button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
-hr {
-    border: 1px solid #dee2e6;
-    margin: 20px 0;
+/* Limpeza de estilos padrão do navegador */
+body {
+    margin: 0;
+    padding: 0;
 }
