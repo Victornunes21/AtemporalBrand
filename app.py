@@ -28,6 +28,17 @@ def inicial():
 def novidades():
     return render_template('novidades.html')
 
+@app.route('/basicos.html')
+def basicos():
+    return render_template('basicos.html')
+
+@app.route('/jeans.html')
+def jeans():
+    return render_template('jeans.html')
+
+@app.route('/maisvendidos.html')
+def maisvendidos():
+    return render_template('maisvendidos.html')
 
 
 carrinho_itens = []  # Lista para armazenar os itens no carrinho
