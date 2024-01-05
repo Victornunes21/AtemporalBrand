@@ -60,10 +60,10 @@ CREATE TABLE Categoria(
 );
 
 CREATE TABLE ProdutoCategoria(
-	  produtoID INT,
-      categoriaID INT,
-      foreign key (produtoID) REFERENCES Produto(proditoID),
-	  foreign key (categoriaID) REFERENCES Categoria (categoriaID)
+	produtoID INT,
+    categoriaID INT,
+    foreign key (produtoID) REFERENCES Produto(produtoID),
+	foreign key (categoriaID) REFERENCES Categoria (categoriaID)
 );
 
 CREATE TABLE Compra(
