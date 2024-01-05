@@ -28,6 +28,7 @@ def inicial():
 def novidades():
     return render_template('novidades.html')
 
+<<<<<<< HEAD
 @app.route('/basicos.html')
 def basicos():
     return render_template('basicos.html')
@@ -40,6 +41,11 @@ def jeans():
 def maisvendidos():
     return render_template('maisvendidos.html')
 
+=======
+@app.route('/cadastrar_prod.html')
+def cadastrar_prod():
+    return render_template('cadastrar_prod.html')
+>>>>>>> cd579a26774d850f44456d1e72ebb04ce0c7f508
 
 carrinho_itens = []  # Lista para armazenar os itens no carrinho
 
@@ -51,7 +57,6 @@ def adicionar_ao_carrinho():
         quantidade = data.get('quantidade')
 
         # Lógica para adicionar o item ao carrinho
-        # Aqui, estou apenas adicionando uma entrada à lista, você deve adaptar isso à sua lógica real
         carrinho_itens.append({'produto_id': produto_id, 'quantidade': quantidade})
 
         resposta = {'status': 'success', 'mensagem': f'Produto {produto_id} adicionado ao carrinho'}
@@ -125,7 +130,7 @@ def cadastrar():
         mysql.connection.commit()
         cursor.close()
 
-        return redirect
+        return redirect('/minha_conta')
     
 @app.route('/cadastrarforn', methods =['POST'])
 def cadastrarforn():
@@ -141,7 +146,7 @@ def cadastrarforn():
         mysql.connection.commit()
         cursor.close()
 
-        return redirect
+        return redirect('/')
     
 @app.route('/enviar', methods=['GET', 'POST'])
 def enviar():
@@ -195,6 +200,26 @@ def produtos():
     cursor.close()
     return str(data)
 
+@app.route('/cadastrar_produto', methods=['POST'])
+def cadastrar_produto():
+    if request.method == 'POST':
+        nome = request.form['nome']
+        descricao = request.form['descricao']
+        quantidade = request.form['quantidade']
+        valor = request.form['valor']
+
+        # Adapte esta lógica para inserir os dados no seu banco de dados
+        cursor = mysql.connection.cursor()
+        cursor.execute("""
+            INSERT INTO Produto (nome, descricao, quantProduto, valorProduto)
+            VALUES (%s, %s, %s, %s)
+        """, (nome, descricao, quantidade, valor))
+
+        mysql.connection.commit()
+        cursor.close()
+
+        # Redirecione para a página de sucesso ou qualquer outra página
+        return redirect('/cadastrar_prod')
 
 if __name__ == '__main__':
     app.run(debug=True)
