@@ -24,7 +24,30 @@ mysql.init_app(app)
 def inicial():
     return render_template('principal.html')
 
-# ...
+
+carrinho_itens = []  # Lista para armazenar os itens no carrinho
+
+@app.route('/adicionar_ao_carrinho', methods=['POST'])
+def adicionar_ao_carrinho():
+    try:
+        data = request.json
+        produto_id = data.get('produto_id')
+        quantidade = data.get('quantidade')
+
+        # Lógica para adicionar o item ao carrinho
+        # Aqui, estou apenas adicionando uma entrada à lista, você deve adaptar isso à sua lógica real
+        carrinho_itens.append({'produto_id': produto_id, 'quantidade': quantidade})
+
+        resposta = {'status': 'success', 'mensagem': f'Produto {produto_id} adicionado ao carrinho'}
+        return jsonify(resposta)
+    except Exception as e:
+        return jsonify({'status': 'error', 'mensagem': str(e)})
+
+@app.route('/carrinho')
+def exibir_carrinho():
+    # Lógica para exibir os itens no carrinho
+    return render_template('carrinho.html', carrinho_itens=carrinho_itens)
+
 
 @app.route('/pesquisar', methods=['GET'])
 def pesquisar():

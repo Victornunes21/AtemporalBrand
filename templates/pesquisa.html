@@ -21,8 +21,38 @@
         {% else %}
             <p>Nenhuma imagem disponível.</p>
         {% endif %}
-
+        <br><button class="adicionar-ao-carrinho" data-produto-id="{{ produto[0] }}">Adicionar ao Carrinho</button>
         <hr>
     {% endfor %}
+    <script>
+        document.querySelectorAll('.adicionar-ao-carrinho').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var produtoId = btn.getAttribute('data-produto-id');
+                adicionarAoCarrinho(produtoId);
+            });
+        });
+
+        function adicionarAoCarrinho(produtoId) {
+            fetch('/adicionar_ao_carrinho', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    produto_id: produtoId,
+                    quantidade: 1
+                }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Lógica para manipular a resposta do servidor, se necessário
+                console.log('Item adicionado ao carrinho:', data);
+                // Atualize a interface do usuário para refletir a adição ao carrinho
+            })
+            .catch((error) => {
+                console.error('Erro ao adicionar ao carrinho:', error);
+            });
+        }
+    </script>
 </body>
 </html>
