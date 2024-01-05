@@ -12,7 +12,7 @@ app.secret_key = 'loja AtemporalBrand'
 # Configurações do banco de dados
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = ''
+app.config['MYSQL_PASSWORD'] = 'labinfo'
 app.config['MYSQL_DB'] = 'AtemporalBrand'
 
 # Inicialização do MySQL
@@ -28,7 +28,7 @@ def inicial():
 def novidades():
     return render_template('novidades.html')
 
-<<<<<<< HEAD
+
 @app.route('/basicos.html')
 def basicos():
     return render_template('basicos.html')
@@ -41,11 +41,10 @@ def jeans():
 def maisvendidos():
     return render_template('maisvendidos.html')
 
-=======
+
 @app.route('/cadastrar_prod.html')
 def cadastrar_prod():
     return render_template('cadastrar_prod.html')
->>>>>>> cd579a26774d850f44456d1e72ebb04ce0c7f508
 
 carrinho_itens = []  # Lista para armazenar os itens no carrinho
 

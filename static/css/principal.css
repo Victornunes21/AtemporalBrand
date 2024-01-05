@@ -120,13 +120,6 @@ h1{
     text-align: center;
 }
 
-.masc{
-    margin-top: 200px;
-}
-
-.fem{
-    margin-bottom: 40px;
-}
 
 img{
     width: 100%;
@@ -156,6 +149,7 @@ img{
     justify-content: center;
     align-items: center;
     height: 100vh;
+
 }
 
 .menuFeminino{
@@ -364,8 +358,6 @@ img{
         width: 100%;
     }
 }
-
-
 
 
 .fotos {
