@@ -24,6 +24,11 @@ mysql.init_app(app)
 def inicial():
     return render_template('principal.html')
 
+@app.route('/novidades.html')
+def novidades():
+    return render_template('novidades.html')
+
+
 
 carrinho_itens = []  # Lista para armazenar os itens no carrinho
 

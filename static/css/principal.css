@@ -88,8 +88,6 @@ nav ul li a{
   
 }
 
-
-
 .fotos div{
     text-align: center;
 }
@@ -116,6 +114,18 @@ nav ul li a{
 .carrossel-slide{
     min-width: 100%;
     box-sizing: border-box;
+}
+
+h1{
+    text-align: center;
+}
+
+.masc{
+    margin-top: 200px;
+}
+
+.fem{
+    margin-bottom: 40px;
 }
 
 img{
@@ -178,7 +188,6 @@ img{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 400px;
 }
 
 .menuMasculino a{
@@ -191,7 +200,7 @@ img{
 }
 
 .menuMasculino h4{
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 .contact{
