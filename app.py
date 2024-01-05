@@ -29,7 +29,6 @@ def novidades():
     return render_template('novidades.html')
 
 
-
 carrinho_itens = []  # Lista para armazenar os itens no carrinho
 
 @app.route('/adicionar_ao_carrinho', methods=['POST'])
@@ -40,7 +39,6 @@ def adicionar_ao_carrinho():
         quantidade = data.get('quantidade')
 
         # Lógica para adicionar o item ao carrinho
-        # Aqui, estou apenas adicionando uma entrada à lista, você deve adaptar isso à sua lógica real
         carrinho_itens.append({'produto_id': produto_id, 'quantidade': quantidade})
 
         resposta = {'status': 'success', 'mensagem': f'Produto {produto_id} adicionado ao carrinho'}
@@ -114,7 +112,7 @@ def cadastrar():
         mysql.connection.commit()
         cursor.close()
 
-        return redirect
+        return redirect('/minha_conta')
     
 @app.route('/cadastrarforn', methods =['POST'])
 def cadastrarforn():
@@ -130,7 +128,7 @@ def cadastrarforn():
         mysql.connection.commit()
         cursor.close()
 
-        return redirect
+        return redirect('/')
     
 @app.route('/enviar', methods=['GET', 'POST'])
 def enviar():
